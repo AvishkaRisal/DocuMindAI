@@ -14,8 +14,11 @@ frontend_url = os.environ.get("FRONTEND_URL", "https://documindai-production-cb1
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[frontend_url], 
-    allow_credentials=True, # Recommended for file uploads
+    allow_origins=[
+        "https://documindai-production-cb17.up.railway.app",
+        "http://localhost:5173",
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
