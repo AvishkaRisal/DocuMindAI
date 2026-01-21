@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 app = FastAPI()
 
-frontend_url = os.environ.get("FRONTEND_URL", "*")
+frontend_url = os.environ.get("FRONTEND_URL", "https://documindai-production-cb17.up.railway.app")
 
 app.add_middleware(
     CORSMiddleware,
