@@ -10,9 +10,12 @@ from dotenv import load_dotenv
 load_dotenv()
 app = FastAPI()
 
+frontend_url = os.environ.get("FRONTEND_URL", "*")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[frontend_url], 
+    allow_credentials=True, # Recommended for file uploads
     allow_methods=["*"],
     allow_headers=["*"],
 )
